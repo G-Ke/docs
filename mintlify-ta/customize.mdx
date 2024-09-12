@@ -1,0 +1,111 @@
+---
+title: 'Customization'
+description: 'Customization thoughts'
+icon: 'palette'
+---
+
+I was happy to see generous customization options built into the core product (and available in the Hobby tier), with even more robust customization available to paid customers. Sometimes I think companies miss the mark with drawing lines on their free-tier subscriptions and end up neglecting to show the user how easily a product can be customized to match their branding.
+
+## Built-in Components
+
+### Built in Mermaid ERD? Sign me up!
+
+I love Mermaid diagrams. I often use Mermaid entity relationship diagrams to help me visualize data model structures and schemas relationships. Being able to easily include Meraid diagrams in the documentation is easily one of my favorite features.
+
+The diagram below is an old draft ERD I had from a project I was recently working on.
+
+```mermaid
+erDiagram
+    UploadedFile ||--o{ FileTextExtraction : has
+    UploadedFile ||--o{ Conversation : associated_with
+    UploadedFile ||--o{ DynamicFeatureSet : has
+    Conversation ||--o{ Message : contains
+    Source ||--o{ UploadedFile : has
+    Source ||--o{ DynamicFeatureSet : has
+    DynamicFeatureSet ||--o{ RecencyFeature : has
+    DynamicFeatureSet ||--o{ RelevanceFeature : has
+    DynamicFeatureSet }o--|| UploadedFile : belongs_to
+    DynamicFeatureSet }o--|| Source : belongs_to
+
+    UploadedFile {
+        UUID id_external
+        string file_name
+        file file
+        datetime uploaded_at
+    }
+    FileTextExtraction {
+        UUID id_external
+        text extracted_text
+        datetime processed_at
+        int chunk_index
+        int page_number
+        int chunk_start
+        int chunk_end
+        json metadata
+        vector embeddings_together_m2_bert_80M_2k_retrieval
+    }
+    Conversation {
+        UUID id_external
+        datetime created_at
+        datetime updated_at
+    }
+    Message {
+        UUID id_external
+        string role
+        text content
+        datetime created_at
+        vector embeddings_together_m2_bert_80M_2k_retrieval
+    }
+    Source {
+        UUID id_external
+        string name
+        text description
+        string source_name
+        string source_type
+        string source_format
+        string source_path
+        datetime created_at
+        datetime updated_at
+        json metadata
+        json tags
+    }
+    RecencyFeature {
+        UUID id_external
+        string name
+        text description
+        datetime created_at
+        datetime updated_at
+        json metadata
+        json tags
+        text content
+        datetime timestamp
+        float weight
+    }
+    RelevanceFeature {
+        UUID id_external
+        string name
+        text description
+        datetime created_at
+        datetime updated_at
+        json metadata
+        json tags
+        text content
+        json keywords
+        float weight
+    }
+    DynamicFeatureSet {
+        UUID id_external
+        string name
+        text description
+        datetime created_at
+        datetime updated_at
+        json metadata
+        json tags
+    }
+```
+
+## Icons
+
+Ok, I am kind of a sucker for Font Awesome icons. Not having to handle that on my side makes the experience so much better, and the look and feel of the docs site speaks for itself.
+
+## 

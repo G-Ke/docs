@@ -7,23 +7,28 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#87734e",
+    "light": "#87734e",
+    "dark": "#4d3e25",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#87734e",
+      "to": "#4d3e25"
     }
   },
+  "integrations": {
+    "intercom": "x2pg8cwb"
+  },
+  "theme": "prism",
+  "layout": "solidSidenav",
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Call Me",
+      "url": "tel:+1-339-225-9855"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Email Me",
+    "url": "mailto:george.k@mm.st"
   },
   "tabs": [
     {
@@ -50,22 +55,29 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Begin Here",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "simple-resume"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Mintlify Takeaways",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "mintlify-ta/hobby",
+        "mintlify-ta/customize",
+        "mintlify-ta/markdown",
+        "mintlify-ta/code",
+        "mintlify-ta/images",
+        "mintlify-ta/settings",
+        "mintlify-ta/navigation",
+        "mintlify-ta/reusable-snippets"
+      ]
+    },
+    {
+      "group": "Questions",
+      "pages": [
+        "mintlify-ta/questions-and-issues"
       ]
     },
     {
