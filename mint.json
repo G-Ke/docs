@@ -1,5 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
+  "openapi": "openapi.yaml",
   "name": "GK",
   "logo": {
     "dark": "/logo/dark.svg",
@@ -33,7 +34,7 @@
   "tabs": [
     {
       "name": "Mock API Reference",
-      "url": "api-reference"
+      "url": "mock-api"
     },
     {
       "name": "George's Resume",
@@ -41,7 +42,7 @@
     }
   ],
   "primaryTab": {
-      "name": "Welcome"
+    "name": "Welcome"
   },
   "anchors": [
     {
@@ -78,17 +79,15 @@
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Mock API Reference",
+      "icon": "code",
       "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "mock-api/introduction",
+        "mock-api/endpoints/list-all-items",
+        "mock-api/endpoints/create-a-new-item",
+        "mock-api/endpoints/get-an-item-by-id",
+        "mock-api/endpoints/update-an-item-by-id",
+        "mock-api/endpoints/delete-an-item-by-id"
       ]
     },
     {

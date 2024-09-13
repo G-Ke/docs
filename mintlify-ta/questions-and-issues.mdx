@@ -50,3 +50,51 @@ a @ 3269.dcb0ace7e784f192.js:1
       ]
     }
 ```
+
+## `Invalid href` when generating API Endpoints
+
+**Problem:** After adding a mock API reference `OpenAPI.yaml` to my docs folder and including it as an anchor, I recieved `invalid href` errors in the terminal after starting `mintlify dev`.
+
+```
+Invalid href '/mock-api\endpoints\list-all-items' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
+Invalid href '/mock-api\endpoints\create-a-new-item' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
+Invalid href '/mock-api\endpoints\get-an-item-by-id' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
+Invalid href '/mock-api\endpoints\update-an-item-by-id' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
+Invalid href '/mock-api\endpoints\delete-an-item-by-id' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
+```
+
+**Solution:** I instead used the Mintlify scraper to generate the endpoint mdx files, which worked, however the returned `Navigation` array showed what appears to be the source of the logs above.
+
+```json
+navigation object suggestion:
+[
+  {
+    "group": "API Reference",
+    "pages": [
+      "mock-api\\endpoints\\list-all-items",
+      "mock-api\\endpoints\\create-a-new-item",
+      "mock-api\\endpoints\\get-an-item-by-id",
+      "mock-api\\endpoints\\update-an-item-by-id",
+      "mock-api\\endpoints\\delete-an-item-by-id"
+    ]
+  }
+]
+```
+
+**Additional:** Manually adjusting the endpoints removed the warnings from the console. I am not sure if this is due to creating this on Windows, but noticed that it was difficult to understand the source of the issue when relying on the Auto-Generation features.
+
+```json
+{
+      "group": "API Reference",
+      "icon": "code",
+      "pages": [
+        "mock-api/endpoints/list-all-items",
+        "mock-api/endpoints/create-a-new-item",
+        "mock-api/endpoints/get-an-item-by-id",
+        "mock-api/endpoints/update-an-item-by-id",
+        "mock-api/endpoints/delete-an-item-by-id"
+      ]
+    }
+```
+
+## Is there a way to decide where Auto-Generated endpoint files are located when adding OpenAPI spec as an Anchor or Tab?
