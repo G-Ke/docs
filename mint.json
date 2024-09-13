@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "GK",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -32,46 +32,43 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "Mock API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "George's Resume",
+      "url": "resume"
     }
   ],
+  "primaryTab": {
+      "name": "Welcome"
+  },
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "My Old Personal Site",
+      "icon": "user-tie",
+      "url": "https://georgekenneally.com"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "My GitHub",
+      "icon": "github",
+      "url": "https://github.com/g-ke"
     }
   ],
   "navigation": [
     {
-      "group": "Begin Here",
+      "group": "Welcome",
       "pages": [
-        "introduction",
-        "simple-resume"
+        "introduction"
       ]
     },
     {
-      "group": "Mintlify Takeaways",
+      "group": "A Few Takeaways",
       "pages": [
         "mintlify-ta/hobby",
         "mintlify-ta/customize",
-        "mintlify-ta/markdown",
-        "mintlify-ta/code",
-        "mintlify-ta/images",
-        "mintlify-ta/settings",
-        "mintlify-ta/navigation",
-        "mintlify-ta/reusable-snippets"
+        "mintlify-ta/api",
+        "mintlify-ta/other"
       ]
     },
     {
@@ -92,6 +89,12 @@
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
+      ]
+    },
+    {
+      "group": "Resume",
+      "pages": [
+        "resume/introduction"
       ]
     }
   ],

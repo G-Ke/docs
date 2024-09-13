@@ -4,10 +4,49 @@ description: "Any questions or difficulties that I encounter are listed here."
 icon: 'question'
 ---
 
-# Snippets Not Displayed Using Mintlify dev
+## Snippets not displayed using Mintlify dev
 
 **Problem:** I struggled to get snippets to show up after creating them according to the documentation [reusable-snippets in quickstart](https://mintlify.com/docs/reusable-snippets). They would not populate in the localhost dev preview. 
 
 **Solution:** This was resolved by restarting the dev preview at the command line. The snippet was then loaded successfully.
 
-I was a bit confused for a few minutes, initially thinking I must have made a mistake creating the snippet or inserting it in another page.
+I was a bit confused for a few minutes, initially thinking I must have made a mistake creating or inserting the snippet.
+
+## Mermaid component not allowing proper scrolling
+
+**Problem:** After adding a pre-existing draft Mermaid diagram I had to the Mermaid component, I noticed the page did not want to stay scrolled beneath the diagram, both in localhost via Mintlify CLI and while deployed. 
+
+**Solution:** Unknown at this time. There is an error in the console that I didn't dig too much into. 
+
+**Additional:** My assumption is that maybe this Mermaid template I used is not supported in some way (maybe an issue with a type I have defined). The main problem is there is no sign that something is not being parsed correctly and the issue only crops up for users who attempt to scroll past this specific (and perhaps other similar) Mermaid diagrams.
+
+<Info>See where this was happening [here](/mintlify-ta/customize#mermaid-component-not-allowing-proper-scrolling)</Info>
+
+```jsstacktrace
+3269.dcb0ace7e784f192.js:1 Error while rendering mermaid TypeError: Cannot read properties of null (reading 'getBBox')
+    at k (1114.1920627db806ab87.js:1:21955)
+    at 1114.1920627db806ab87.js:1:25669
+    at Array.forEach (<anonymous>)
+    at R (1114.1920627db806ab87.js:1:25175)
+    at Object.draw (1114.1920627db806ab87.js:1:28931)
+    at Object.render (43770083.c9d898868c165f00.js:57:1602)
+a @ 3269.dcb0ace7e784f192.js:1
+```
+
+
+## Trouble adding a new navigation Tab
+
+**Problem:** I had very slight difficulty adding a new internal navigation [Tab](https://mintlify.com/docs/settings/navigation#tabs) for my resume section. Adding a tab that went to an external url worked fine and was displayed on the site, but I could not get an internal tab to display.
+
+**Solution:** The issue was that I had not defined the Resume section in the Navigation array within `mint.json`. 
+
+**Additional:** It was not clear to me after looking up how to add a Tab that it also needed to be added to Navigation. It made sense once I figured it out, but perhaps a call out or an additional sentence could be added to help clarify.
+
+```json
+    {
+      "group": "Resume",
+      "pages": [
+        "resume/introduction"
+      ]
+    }
+```
