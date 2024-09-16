@@ -46,11 +46,6 @@
   },
   "anchors": [
     {
-      "name": "My Old Personal Site",
-      "icon": "user-tie",
-      "url": "https://georgekenneally.com"
-    },
-    {
       "name": "My GitHub",
       "icon": "github",
       "url": "https://github.com/g-ke"
@@ -83,6 +78,7 @@
       "icon": "code",
       "pages": [
         "mock-api/introduction",
+        "mock-api/schema",
         "mock-api/endpoints/list-all-items",
         "mock-api/endpoints/create-a-new-item",
         "mock-api/endpoints/get-an-item-by-id",
@@ -98,8 +94,6 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "github": "https://github.com/g-ke"
   }
 }

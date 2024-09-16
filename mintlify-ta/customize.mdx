@@ -4,28 +4,18 @@ description: 'Customization thoughts'
 icon: 'palette'
 ---
 
-I was happy to see generous customization options built into the core product (and available in the Hobby tier), with even more robust customization available to paid customers. Sometimes I think companies miss the mark with drawing lines on their free-tier subscriptions and end up neglecting to show the user how easily a product can be customized to match their branding.
+I was happy to see generous customization options in the Hobby tier, with even more robust customization available to paid customers with custom CSS/JS.
 
 ## Built-in Components
 
-### Built in Mermaid ERD? Sign me up!
+### Mermaid
 
-I love Mermaid diagrams. I often use Mermaid entity relationship diagrams to help me visualize data model and schema relationships. Being able to easily include Meraid diagrams in the documentation is easily one of my favorite features.
+I love Mermaid diagrams. I often use Mermaid entity relationship diagrams to help me visualize data models and schema relationships. Including Meraid diagrams in the documentation easily is one of my favorite features.
 
-The diagram below is an old draft ERD I had from a project I was recently working on.
+The diagram below is an old draft ERD from a project I recently worked on.
 
 ```mermaid
 erDiagram
-    UploadedFile ||--o{ FileTextExtraction : has
-    UploadedFile ||--o{ Conversation : associated_with
-    UploadedFile ||--o{ DynamicFeatureSet : has
-    Conversation ||--o{ Message : contains
-    Source ||--o{ UploadedFile : has
-    Source ||--o{ DynamicFeatureSet : has
-    DynamicFeatureSet ||--o{ RecencyFeature : has
-    DynamicFeatureSet ||--o{ RelevanceFeature : has
-    DynamicFeatureSet }o--|| UploadedFile : belongs_to
-    DynamicFeatureSet }o--|| Source : belongs_to
 
     UploadedFile {
         UUID id_external
@@ -102,10 +92,19 @@ erDiagram
         json metadata
         json tags
     }
+
+UploadedFile ||--o{ FileTextExtraction : has
+UploadedFile ||--o{ Conversation : associated_with
+UploadedFile ||--o{ DynamicFeatureSet : has
+Conversation ||--o{ Message : contains
+Source ||--o{ UploadedFile : has
+Source ||--o{ DynamicFeatureSet : has
+DynamicFeatureSet ||--o{ RecencyFeature : has
+DynamicFeatureSet ||--o{ RelevanceFeature : has
+DynamicFeatureSet }o--|| UploadedFile : belongs_to
+DynamicFeatureSet }o--|| Source : belongs_to
 ```
 
 ## Icons
 
-Ok, I am kind of a sucker for Font Awesome icons. Not having to handle that on my side makes the experience so much better, and the look and feel of the docs site speaks for itself.
-
-## 
+Great icons put just the right finishing touches on a site. Not having to handle that on my side makes the experience so much better, and the look and feel of the docs site speaks for itself.

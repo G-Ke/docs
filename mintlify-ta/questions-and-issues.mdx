@@ -6,9 +6,10 @@ icon: 'question'
 
 ## Snippets not displayed using Mintlify dev
 
-**Problem:** I struggled to get snippets to show up after creating them according to the documentation [reusable-snippets in quickstart](https://mintlify.com/docs/reusable-snippets). They would not populate in the localhost dev preview. 
+**Problem:** I struggled to get snippets to show up after creating them according to the documentation [reusable-snippets in quickstart](https://mintlify.com/docs/reusable-snippets). They would not populate in the `mintlify dev` preview. 
 
-**Solution:** This was resolved by restarting the dev preview at the command line. The snippet was then loaded successfully.
+**Solution:** I resolved this by restarting the dev preview at the command line. The snippet was then loaded successfully.
+I was a bit confused for a few minutes, initially thinking I must have made a mistake creating or inserting the snippet.
 
 I was a bit confused for a few minutes, initially thinking I must have made a mistake creating or inserting the snippet.
 
@@ -16,9 +17,9 @@ I was a bit confused for a few minutes, initially thinking I must have made a mi
 
 **Problem:** After adding a pre-existing draft Mermaid diagram I had to the Mermaid component, I noticed the page did not want to stay scrolled beneath the diagram, both in localhost via Mintlify CLI and while deployed. 
 
-**Solution:** Unknown at this time. There is an error in the console that I didn't dig too much into. 
+**Solution:** At this time, I don't have a great answer. There is an error in the console that I didn't investigate too deeply. 
 
-**Additional:** My assumption is that maybe this Mermaid template I used is not supported in some way (maybe an issue with a type I have defined). The main problem is there is no sign that something is not being parsed correctly and the issue only crops up for users who attempt to scroll past this specific (and perhaps other similar) Mermaid diagrams.
+**Additional:** The problem only surfaces for users who attempt to scroll past this specific (and perhaps other similar) Mermaid diagrams. There is something off about the diagram I provided or the size which I think is triggering the error below.
 
 <Info>See where this was happening [here](/mintlify-ta/customize#mermaid-component-not-allowing-proper-scrolling)</Info>
 
@@ -36,11 +37,11 @@ a @ 3269.dcb0ace7e784f192.js:1
 
 ## Trouble adding a new navigation Tab
 
-**Problem:** I had very slight difficulty adding a new internal navigation [Tab](https://mintlify.com/docs/settings/navigation#tabs) for my resume section. Adding a tab that went to an external url worked fine and was displayed on the site, but I could not get an internal tab to display.
+**Problem:** I had difficulty adding a new internal navigation [Tab](https://mintlify.com/docs/settings/navigation#tabs) for my resume section. Adding a tab that went to an external URL worked fine and was displayed on the site, but I could not get an internal tab to display.
 
 **Solution:** The issue was that I had not defined the Resume section in the Navigation array within `mint.json`. 
 
-**Additional:** It was not clear to me after looking up how to add a Tab that it also needed to be added to Navigation. It made sense once I figured it out, but perhaps a call out or an additional sentence could be added to help clarify.
+**Additional:** After adding a tab, it wasn't immediately clear when reading the docs on tabs that it also needed to be added to Navigation. It made sense once I figured it out, but a call-out or an additional sentence may help clarify.
 
 ```json
     {
@@ -53,7 +54,7 @@ a @ 3269.dcb0ace7e784f192.js:1
 
 ## `Invalid href` when generating API Endpoints
 
-**Problem:** After adding a mock API reference `OpenAPI.yaml` to my docs folder and including it as an anchor, I recieved `invalid href` errors in the terminal after starting `mintlify dev`.
+**Problem:** After adding a mock API reference, `OpenAPI.yaml`, to my docs folder and including it as an anchor, I received `invalid href` errors in the terminal after starting `mintlify dev`.
 
 ```
 Invalid href '/mock-api\endpoints\list-all-items' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
@@ -63,7 +64,7 @@ Invalid href '/mock-api\endpoints\update-an-item-by-id' passed to next/router in
 Invalid href '/mock-api\endpoints\delete-an-item-by-id' passed to next/router in page: '/[[...slug]]'. Repeated forward-slashes (//) or backslashes \ are not valid in the href.
 ```
 
-**Solution:** I instead used the Mintlify scraper to generate the endpoint mdx files, which worked, however the returned `Navigation` array showed what appears to be the source of the logs above.
+**Solution:** I instead used the Mintlify scraper to generate the endpoint MDX files, which worked; however, the returned `Navigation` array showed what appears to be the source of the logs above.
 
 ```json
 navigation object suggestion:
@@ -81,7 +82,7 @@ navigation object suggestion:
 ]
 ```
 
-**Additional:** Manually adjusting the endpoints removed the warnings from the console. I am not sure if this is due to creating this on Windows, but noticed that it was difficult to understand the source of the issue when relying on the Auto-Generation features.
+**Additional:** Manually adjusting the slashes for the endpoints removed the warnings from the console. I am unsure if this is due to creating this on Windows, but I noticed that it was difficult to understand the source of the issue when relying on the Auto-Generation features.
 
 ```json
 {
@@ -96,5 +97,3 @@ navigation object suggestion:
       ]
     }
 ```
-
-## Is there a way to decide where Auto-Generated endpoint files are located when adding OpenAPI spec as an Anchor or Tab?

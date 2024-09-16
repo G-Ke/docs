@@ -1,3 +1,92 @@
 ---
 openapi: get /items
 ---
+
+<CodeGroup>
+
+```python Python (requests)
+import requests
+
+def get_items():
+    url = "http://api.example.com/items"  # Replace with your API URL
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        items = response.json()
+        print("Items retrieved successfully:")
+        for item in items:
+            print(f"ID: {item['id']}, Name: {item['name']}")
+    else:
+        print(f"Failed to retrieve items. Status code: {response.status_code}")
+
+get_items()
+```
+
+
+```js Javascript
+async function getItems() {
+    const url = "http://api.example.com/items"; // Replace with your API URL
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const items = await response.json();
+            console.log("Items retrieved successfully:");
+            items.forEach(item => {
+                console.log(`ID: ${item.id}, Name: ${item.name}`);
+            });
+        } else {
+            console.error(`Failed to retrieve items. Status code: ${response.status}`);
+        }
+    } catch (error) {
+        console.error("Error fetching items:", error);
+    }
+}
+
+getItems();
+```
+
+</CodeGroup>
+
+
+<RequestExample>
+
+```python Python Request (requests)
+import requests
+
+def get_items():
+    url = "http://api.example.com/items"  # Replace with your API URL
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        items = response.json()
+        print("Items retrieved successfully:")
+        for item in items:
+            print(f"ID: {item['id']}, Name: {item['name']}")
+    else:
+        print(f"Failed to retrieve items. Status code: {response.status_code}")
+
+get_items()
+```
+
+```js Javascript Request
+async function getItems() {
+    const url = "http://api.example.com/items"; // Replace with your API URL
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const items = await response.json();
+            console.log("Items retrieved successfully:");
+            items.forEach(item => {
+                console.log(`ID: ${item.id}, Name: ${item.name}`);
+            });
+        } else {
+            console.error(`Failed to retrieve items. Status code: ${response.status}`);
+        }
+    } catch (error) {
+        console.error("Error fetching items:", error);
+    }
+}
+
+getItems();
+```
+</RequestExample>
